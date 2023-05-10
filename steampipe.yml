@@ -1,0 +1,24 @@
+name: Run Steampipe
+on:
+  push:
+    branches: [ "steampipe" ]
+# on:
+#   pull_request:
+#     branches: [ "master" ]
+
+jobs:
+  steampipe:
+    runs-on: ubuntu-latest #[self-hosted, ocio, steampipe] 
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+      - name: Change Mode
+        run: chmod +x compliance-reporting.sh
+      # - name: Environment Prep
+      #   run: curl -fsSL https://get.docker.com | sh
+      # - name: Build and Deploy
+      #   run: compliance-reporting.sh
+      - name: Job Status
+        run: echo "🍏 This job's status is ${{ job.status }}."
