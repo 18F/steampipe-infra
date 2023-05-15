@@ -6,5 +6,5 @@ This is a sample repository for demo.
    
 
 
-======
+=====
 >>>>>>> master
